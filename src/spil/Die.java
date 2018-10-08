@@ -20,8 +20,8 @@ import java.lang.Math;
 
 public class Die {
 
-    int FaceValue;
-    int[] faces = {0,0,0,0,0,0};
+    private int FaceValue;
+    private int[] faces = {0,0,0,0,0,0};
 
     /**
      * Denne funktion tester en terning mod et antal kast med Chi2 testen.
@@ -88,4 +88,20 @@ public class Die {
         }
     }
 
+    /*
+    ------------------------------------------------------------------------------
+    Properties
+     */
+
+    public int getFaceValue() {
+        return FaceValue;
+    }
+
+    public void setFaceValue(int faceValue) {
+        FaceValue = faceValue;
+    }
+
+    public int[] getFaces() {
+        return faces;
+    }
 }
