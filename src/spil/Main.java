@@ -24,12 +24,7 @@ public class Main {
 
         Die die1 = new Die(); //initialiserer instance af terningen.
         Die die2 = new Die();
-
-        if (die1.DieCheck(10000)) { //test af en terning genne Chi2 test.
-            System.out.println("The tested dice is true.");
-        } else {
-            System.out.println("The tested dice is false.");
-        }
+        
 
         Player player1 = new Player();
         Player player2 = new Player();

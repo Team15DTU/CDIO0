@@ -34,7 +34,12 @@ public class Die {
      *
      */
     public void roll() {        //Denne funktion 'kaster' terningen og sætter dens 'FaceValue' til den slåede værdi.
-        FaceValue = (int)(Math.random()*6) + 1;
+
+        Random generator = new Random();
+
+
+
+        FaceValue = generator.nextInt(6) + 1;
         DieSwitch(FaceValue);
         }
 
