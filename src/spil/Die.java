@@ -20,36 +20,15 @@ import java.lang.Math;
 
 public class Die {
 
+    /*
+    -------------------------------------------------------------------------------------------
+    Fields
+     */
+
     private int FaceValue;
     private int[] faces = {0,0,0,0,0,0};
 
-    /**
-     * Denne funktion tester en terning mod et antal kast med Chi2 testen.
-     *
-     * @param rolls
-     * @return
-     */
-    public boolean DieCheck (int rolls) {
-        boolean valid = false;
-        double exp = rolls/6.0;
-        double chi2[] = {0,0,0,0,0,0};
-        double ChiCrit = 11.070; //critical value for df = 5 chi-squared.
 
-        for (int j = 0; j < rolls; j++){
-            roll();
-        }
-
-        for (int i = 0; i <= 5; i++) {
-            chi2[i] = ((faces[i]-exp)*(faces[i]-exp))/exp;
-        }
-
-        double chiSum = chi2[0]+chi2[1]+chi2[2]+chi2[3]+chi2[4]+chi2[5];
-
-        if (chiSum < ChiCrit) {
-            valid = true;
-        }
-        return valid;
-    }
 
     /**
      *
@@ -89,7 +68,7 @@ public class Die {
     }
 
     /*
-    ------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------
     Properties
      */
 
