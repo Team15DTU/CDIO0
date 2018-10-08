@@ -30,7 +30,7 @@ public class Game {
         System.out.println("Type second player name:");
         player2.name = scanner.next();
 
-        while (player1.score < 40 && player2.score < 40) {
+        while (player1.score <= 40 && player2.score <= 40) {
 
             turn1.turn(player1, die1, die2);
             System.out.println("Your score is "+player1.score+"\n");
