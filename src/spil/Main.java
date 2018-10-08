@@ -18,7 +18,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main (String args[]) {
+    public static void main(String args[]) {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -30,22 +30,5 @@ public class Main {
 
         Game game = new Game();
         game.theGame(player1, player2, die1, die2);
-
-}
-
-    /*
-    private int getSum(Die one, Die two) {
-        sum = roll.one+roll.two;
-        return sum;
-    } //returnerer summen af øjnene
-
-    private boolean getEns(Die one, Die two) {
-        if (roll.one == roll.two) {
-            equal = true;
-        }
-        return equal;
-    } //returnerer on øjnene er ens
-
-    //setDice(int, int) //placerer terninger med angivet værdi
-    */
+    }
 }
