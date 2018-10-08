@@ -40,6 +40,16 @@ public class Game {
 
         }
 
+        while (player1.score == player2.score) {
+
+            turn1.turn(player1, die1, die2);
+            System.out.println("Your score is "+player1.score+"\n");
+
+            turn1.turn(player2, die1, die2);
+            System.out.println("Your score is "+player2.score+"\n");
+
+        }
+
         if(player1.score>player2.score){
         System.out.printf(player1.name+" won!");
         }else{
