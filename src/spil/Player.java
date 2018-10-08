@@ -8,7 +8,7 @@ package spil;
  */
 public class Player {
 
-    String name;
-    int score;
+    String name; // Name for player
+    int score; // Score for player
 
 }
