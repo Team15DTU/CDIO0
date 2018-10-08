@@ -1,6 +1,6 @@
-package spil;
-
 import org.junit.Test;
+import spil.Die;
+
 import static org.junit.Assert.*;
 
 /**
@@ -21,26 +21,55 @@ public class DieTest {
     @org.junit.Test
     public void dieCheck() {
 
-        assertEquals(true,  die.DieCheck(10000));
-        assertEquals(false, die.DieCheck(5));
+        // Determine how many times we want to roll the dice
+        int rolls = 6000000;
+        // Array to hold all the rolled values
+        int[] faces = {0,0,0,0,0,0};
+
+        boolean valid = false;
+        double exp = rolls/6.0;
+        double chi2[] = {0,0,0,0,0,0};
+        double ChiCrit = 11.070; //critical value for df = 5 chi-squared.
+
+        // Roll "rolls" times and put all the values into "faces"
+        for (int j = 0; j < rolls; j++){
+            roll();                         // Roll the dice
+            faces[die.getFaceValue() - 1] += 1;  // Put value into array
+        }
+
+        for (int i = 0; i <= 5; i++) {
+            chi2[i] = ((faces[i]-exp)*(faces[i]-exp))/exp;
+        }
+
+        for (int i : faces) {
+            System.out.println(i);
+        }
+
+        double chiSum = chi2[0]+chi2[1]+chi2[2]+chi2[3]+chi2[4]+chi2[5];
+
+        if (chiSum < ChiCrit) {
+            valid = true;
+        }
+
+        assertTrue(valid);      // Check if valid is true
     }
 
     @org.junit.Test
     public void roll() {
         for (int h = 0; h < 10; h++) {
             die.roll();
-            assertFalse(die.FaceValue == 0);
+            assertFalse(die.getFaceValue() == 0);
         }
         for (int h = 0; h < 10; h++) {
             die.roll();
-            assertFalse(die.FaceValue == 7);
+            assertFalse(die.getFaceValue() == 7);
         }
     }
 
     @org.junit.Test
     public void dieSwitch() {
-        die.FaceValue = 1;
-        die.DieSwitch(die.FaceValue);
-        assertEquals(die.faces[0],1);
+        die.setFaceValue(1);
+        die.DieSwitch(die.getFaceValue());
+        assertEquals(die.getFaces()[0],1);
     }
 }
