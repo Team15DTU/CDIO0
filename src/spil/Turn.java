@@ -17,12 +17,23 @@ public class Turn {
         input = scanner.next();
         die1.roll();
         die2.roll();
+        boolean w = false;
 
         System.out.println("You rolled "+die1.getFaceValue()+" and "+die2.getFaceValue());
         player.score=player.score+die1.getFaceValue()+die2.getFaceValue();
         if (die1.getFaceValue() == 1 && die2.getFaceValue() == 1) {
             player.score = 0;
             System.out.println("You rolled two ones and your score has been reset");
+        } else if (die1.getFaceValue() == 6 && die2.getFaceValue() == 6) {
+            System.out.println("You rolled two similar and get an extra turn!");
+
+            w = true;
+
+            turn(player,die1, die2);
+            if (die1.getFaceValue() == 6 && die2.getFaceValue() == 6) {
+                System.out.println("You rolled two 6 two times in a row and won turn!");
+                player.score = 99999;
+            }
         } else if (die1.getFaceValue() == die2.getFaceValue()) {
             System.out.println("You rolled two similar and get an extra turn!");
             turn(player, die1, die2);
