@@ -10,5 +10,6 @@ public class Player {
 
     String name; // Name for player
     int score; // Score for player
+    boolean winningTicket = false; // if the player hit 2x6
 
 }
