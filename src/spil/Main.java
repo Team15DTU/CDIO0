@@ -24,7 +24,6 @@ public class Main {
 
         Die die1 = new Die(); //initialiserer instance af terningen.
         Die die2 = new Die();
-        
 
         Player player1 = new Player();
         Player player2 = new Player();
