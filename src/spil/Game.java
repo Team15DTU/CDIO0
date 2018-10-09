@@ -27,6 +27,7 @@ public class Game {
 
         System.out.println("Type first player name:");
         player1.name = scanner.next();
+
         System.out.println("Type second player name:");
         player2.name = scanner.next();
 
@@ -50,10 +51,14 @@ public class Game {
 
         }
 
-        if(player1.score>player2.score){
-        System.out.printf(player1.name+" won!");
-        }else{
-        System.out.printf(player2.name+" won!");
+        if (player1.score>player2.score){
+
+            System.out.printf(player1.name+" won!");
+
+        } else {
+
+            System.out.printf(player2.name+" won!");
+
         }
 
     }
