@@ -54,7 +54,7 @@ public class Game {
 
             System.out.printf(player1.name+" won!"); // Print out the name of player1 and calls him the winner
 
-        } else (player2.hasWon == true){ // If player2.hasWin is true the code below is executed.
+        } else if (player2.hasWon == true) { // If player2.hasWin is true the code below is executed.
 
             System.out.printf(player2.name+" won!"); // Print out the name of player2 and calls him the winner
 
