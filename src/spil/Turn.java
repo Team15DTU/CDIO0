@@ -35,25 +35,31 @@ public class Turn {
 
             if (player.winningTicket == true) {
 
-                System.out.println(" rolled 2 times double 6");
+                System.out.println(player.name + " rolled 2 times double 6 and WIN");
 
-                player.score = 9999; // setting score to win
+                player.hasWon = true; // setting score to win
             }  else {
-
-                System.out.println("You rolled two similar and get an extra turn!"); // Explains that your roll of two equal facevalues give you an extra turn
 
                 player.winningTicket = true;
 
-                turn(player, die1, die2); // Run a extra turn
+                if (player.score>40) {player.hasWon = true;
+                } else {
+                    System.out.println("You rolled two similar and get an extra turn!"); // Explains that your roll of two equal facevalues give you an extra turn
+
+                    turn(player, die1, die2); // Run a extra turn
+                }
 
             }
         } else if (die1.getFaceValue() == die2.getFaceValue() && die1.getFaceValue() != 6) { // If die1 & die2 is equal to each other it runs the code below.
 
-            System.out.println("You rolled two similar and get an extra turn!"); // Explains that your roll of two equal facevalues give you an extra turn
-
             player.winningTicket = false;
 
-            turn(player, die1, die2); // Run a extra turn
+            if (player.score >= 40) {player.hasWon = true;}
+            else {
+                System.out.println("You rolled two similar and get an extra turn!"); // Explains that your roll of two equal facevalues give you an extra turn
+
+                turn(player, die1, die2); // Run a extra turn
+            }
 
         } else {
 
