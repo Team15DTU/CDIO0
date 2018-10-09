@@ -51,9 +51,9 @@ public class Turn {
 
             System.out.println("You rolled two similar and get an extra turn!"); // Explains that your roll of two equal facevalues give you an extra turn
 
-            turn(player, die1, die2); // Run a extra turn
-
             player.winningTicket = false;
+
+            turn(player, die1, die2); // Run a extra turn
 
         } else {
 

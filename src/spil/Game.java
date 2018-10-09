@@ -31,7 +31,7 @@ public class Game {
         System.out.println("Type second player name:");
         player2.name = scanner.next();
 
-        while (player1.score <= 40 && player2.score <= 40) {
+        while (player1.hasWon == false && player2.hasWon == false || player1.score == player2.score) {
 
             turn1.turn(player1, die1, die2);
             System.out.println("Your score is "+player1.score+"\n");
@@ -41,21 +41,11 @@ public class Game {
 
         }
 
-        while (player1.score == player2.score) {
-
-            turn1.turn(player1, die1, die2);
-            System.out.println("Your score is "+player1.score+"\n");
-
-            turn1.turn(player2, die1, die2);
-            System.out.println("Your score is "+player2.score+"\n");
-
-        }
-
-        if (player1.score>player2.score){
+        if (player1.hasWon == true){
 
             System.out.printf(player1.name+" won!");
 
-        } else {
+        } else if (player2.hasWon == true){
 
             System.out.printf(player2.name+" won!");
 
