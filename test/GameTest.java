@@ -1,6 +1,6 @@
-package spil;
-
 import org.junit.Test;
+import spil.*;
+
 import java.util.Scanner;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -25,10 +25,10 @@ public class GameTest {
     public void theGame() {
 
     for (int i = 0; i < 10; i++) {
-        player1.name = "DTU";
-        player2.name = "CBS";
+        player1.setName("DTU");
+        player2.setName("CBS");
         game.theGame(player1, player2, die1, die2);
-        assertFalse(player1.score != 0);
+        assertFalse(player1.getScore() != 0);
     }
     }
 }
