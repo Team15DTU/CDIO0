@@ -29,7 +29,7 @@ public class Turn {
 
             System.out.println("You rolled two ones and your score has been reset"); // Explains that the roll of twe 1's have reset the plaers score
 
-            player.winningTicket = false;
+            player.setWinningTicket(false);
 
         } else if (die1.getFaceValue() == 6 && die2.getFaceValue() == 6) { //give a new turn, and change winning ticket to true
 
@@ -40,7 +40,7 @@ public class Turn {
                 player.hasWon = true; // setting score to win
             }  else {
 
-                player.winningTicket = true;
+                player.setWinningTicket(true);
 
                 if (player.getScore() > 40) {player.setHasWon(true);
                 } else {
@@ -52,7 +52,7 @@ public class Turn {
             }
         } else if (die1.getFaceValue() == die2.getFaceValue() && die1.getFaceValue() != 6) { // If die1 & die2 is equal to each other it runs the code below.
 
-            player.winningTicket = false;
+            player.setWinningTicket(false);
 
             if (player.getScore() >= 40) { player.setHasWon(true); }
             else {
@@ -63,7 +63,7 @@ public class Turn {
 
         } else {
 
-            player.winningTicket = false;
+            player.setWinningTicket(false);
 
         }
     }

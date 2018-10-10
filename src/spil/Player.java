@@ -13,10 +13,10 @@ public class Player {
     Fields
      */
 
-    private String name;            // Name for player
+    private String name;                    // Name for player
     private int score;                      // Score for player
-    boolean winningTicket = false;  // If player rolled 2x6 last turn
-    boolean hasWon = false;         // If player has won
+    private boolean winningTicket = false;  // If player rolled 2x6 last turn
+    boolean hasWon = false;                 // If player has won
 
 
     /*
