@@ -20,12 +20,12 @@ public class Turn {
         die1.roll(); // Use the roll function on die1
         die2.roll(); // Use the roll function on die2
 
-        System.out.println("You rolled "+die1.getFaceValue()+" and "+die2.getFaceValue()); // Print out FaceValues of the twe dies
-        player.score=player.score+die1.getFaceValue()+die2.getFaceValue(); // Loads the FaceValue into Players Score
+        System.out.println("You rolled "+die1.getFaceValue()+" and "+die2.getFaceValue());  // Print out FaceValues of the twe dies
+        player.setScore( player.getScore() + die1.getFaceValue() + die2.getFaceValue() );        // Loads the FaceValue into Players Score
 
         if (die1.getFaceValue() == 1 && die2.getFaceValue() == 1) { // If die1 & die2 are both equal 1 run code below
 
-            player.score = 0; // Players score is set to 0
+            player.setScore(0); // Players score is set to 0
 
             System.out.println("You rolled two ones and your score has been reset"); // Explains that the roll of twe 1's have reset the plaers score
 
@@ -42,7 +42,7 @@ public class Turn {
 
                 player.winningTicket = true;
 
-                if (player.score>40) {player.hasWon = true;
+                if (player.getScore() > 40) {player.setHasWon(true);
                 } else {
                     System.out.println("You rolled two similar and get an extra turn!"); // Explains that your roll of two equal facevalues give you an extra turn
 
@@ -54,7 +54,7 @@ public class Turn {
 
             player.winningTicket = false;
 
-            if (player.score >= 40) {player.hasWon = true;}
+            if (player.getScore() >= 40) { player.setHasWon(true); }
             else {
                 System.out.println("You rolled two similar and get an extra turn!"); // Explains that your roll of two equal facevalues give you an extra turn
 

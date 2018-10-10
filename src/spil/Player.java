@@ -14,7 +14,7 @@ public class Player {
      */
 
     private String name;            // Name for player
-    int score;                      // Score for player
+    private int score;                      // Score for player
     boolean winningTicket = false;  // If player rolled 2x6 last turn
     boolean hasWon = false;         // If player has won
 
