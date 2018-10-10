@@ -29,10 +29,10 @@ public class Game {
         Turn turn1 = new Turn(); // Creates turn and naming it "turn1"
 
         System.out.println("Type first player name:"); // Print out "Type first player name:"
-        player1.setName( scanner.next() );  // Loads input from keyboard and loads it into player1.name
+        player1.setName( scanner.nextLine() );  // Loads input from keyboard and loads it into player1.name
 
         System.out.println("Type second player name:"); // Print out "Type first player name:"
-        player2.setName( scanner.next() );  // Loads input from keyboard and loads it into player2.name
+        player2.setName( scanner.nextLine() );  // Loads input from keyboard and loads it into player2.name
 
         /*
         Runs the while loop as long as player1.has and player2.hasWon == false
