@@ -14,7 +14,7 @@ public class Turn {
 
     public void turn (Player player, Die die1, Die die2) {
 
-        System.out.println("Press 'r' to roll dice for "+player.name);
+        System.out.println( "Press 'r' to roll dice for " + player.getName() );
         input = scanner.next();
 
         die1.roll(); // Use the roll function on die1
@@ -33,9 +33,9 @@ public class Turn {
 
         } else if (die1.getFaceValue() == 6 && die2.getFaceValue() == 6) { //give a new turn, and change winning ticket to true
 
-            if (player.winningTicket == true) {
+            if (player.isWinningTicket() == true) {
 
-                System.out.println(player.name + " rolled 2 times double 6 and WIN");
+                System.out.println(player.getName() + " rolled 2 times double 6 and WIN");
 
                 player.hasWon = true; // setting score to win
             }  else {

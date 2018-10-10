@@ -1,6 +1,5 @@
-package spil;
-
 import static org.junit.Assert.*;
+import spil.*;
 
 /**
  * @author Karl Emil Jeppesen
@@ -14,14 +13,14 @@ public class PlayerTest {
 
     @org.junit.Test
     public void PlayerName() {
-        player.name = "DTU";
-        assertEquals("DTU",  player.name);
+        player.setName("DTU");
+        assertEquals("DTU",  player.getName());
     }
 
     @org.junit.Test
     public void PlayerScore() {
-        player.score = 30;
-        assertEquals(30, player.score);
+        player.setScore(30);
+        assertEquals(30, player.getScore());
     }
 
 }
