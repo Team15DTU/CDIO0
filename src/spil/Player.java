@@ -16,7 +16,7 @@ public class Player {
     private String name;                    // Name for player
     private int score;                      // Score for player
     private boolean winningTicket = false;  // If player rolled 2x6 last turn
-    boolean hasWon = false;                 // If player has won
+    private boolean hasWon = false;         // If player has won
 
 
     /*

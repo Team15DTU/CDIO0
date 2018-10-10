@@ -37,7 +37,7 @@ public class Turn {
 
                 System.out.println(player.getName() + " rolled 2 times double 6 and WIN");
 
-                player.hasWon = true; // setting score to win
+                player.setHasWon(true);     // setting score to win
             }  else {
 
                 player.setWinningTicket(true);
