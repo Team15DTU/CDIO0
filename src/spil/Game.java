@@ -52,7 +52,8 @@ public class Game {
 
         if (player1.isHasWon() == true ){ // If player1.hasWon is true the code below is executed.
 
-            if(player1.isWinningTicket() == true && player2.isWinningTicket() == false && player1.getScore() < player2.getScore()) {
+            if(player1.isWinningTicket() == true && player1.getScore() < player2.getScore()
+                    && player2.isHasWon() ==true && player2.isWinningTicket() == false && player1.getScore() < player2.getScore()) {
 
                 System.out.printf(player1.getName() +" won!"); // Print out the name of player1 and calls him the winner
 
@@ -69,7 +70,8 @@ public class Game {
 
         } else if (player2.isHasWon() == true) { // If player2.hasWin is true the code below is executed.
 
-            if(player2.isWinningTicket() == true && player1.isWinningTicket() == false && player1.getScore() > player2.getScore()) {
+            if(player2.isWinningTicket() == true && player1.getScore() > player2.getScore()
+                    && player1.isHasWon() == true && player1.isWinningTicket() == false ) {
 
                 System.out.printf(player2.getName() +" won!"); // Print out the name of player1 and calls him the winner
 
@@ -77,7 +79,7 @@ public class Game {
 
                 System.out.printf(player2.getName() + " won!"); // Print out the name of player1 and calls him the winner
 
-            } else if (player2.getScore() < player2.getScore()){
+            } else if (player2.getScore() < player2 .getScore()){
 
                 System.out.printf(player1.getName() +" won!"); // Print out the name of player2 and calls him the winner
 
