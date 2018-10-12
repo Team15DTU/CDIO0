@@ -33,9 +33,9 @@ public class Turn {
 
         } else if (die1.getFaceValue() == 6 && die2.getFaceValue() == 6) { //give a new turn, and change winning ticket to true
 
-            if (player.isWinningTicket() == true) {
+            if (player.isWinningTicket()) {
 
-                System.out.println(player.getName() + " rolled 2 times double 6 and WIN");
+                System.out.println(player.getName() + " rolled double 6 again");
 
                 player.setHasWon(true);     // setting score to win
                 player.setWinningTicket(true);
