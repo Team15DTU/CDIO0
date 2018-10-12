@@ -1,9 +1,7 @@
 package spil;
 
-// import sun.applet.Main;
 
 import java.util.Random;
-import java.lang.Math;
 
 /**
  * @author Gruppe 15
@@ -21,60 +19,60 @@ import java.lang.Math;
 public class Die {
 
     /*
-    -------------------------------------------------------------------------------------------
-    Fields
+    ----------------------------------- Fields  -----------------------------------
+    Private int FaceValue hold the value (number of eyes) of the die.
+    Private int array used for counting number of times of each FaceValue is rolled.
      */
 
     private int FaceValue;
     private int[] faces = {0,0,0,0,0,0};
 
 
-
     /**
      *
      */
-    public void roll() {        //Denne funktion 'kaster' terningen og sætter dens 'FaceValue' til den slåede værdi.
+    public void roll() { // This function acts as the roll of the die
 
-        Random generator = new Random();
+        Random generator = new Random(); // Creates an Random and naming it "generator"
 
-
-
-        FaceValue = generator.nextInt(6) + 1;
-        DieSwitch(FaceValue);
+        FaceValue = generator.nextInt(6) + 1; // Greats a random number from 1-6 and loads it into FaceValue
+        DieSwitch(FaceValue); // Sends FaceValue to DieSwitch for counting of FaceValues.
         }
 
     /**
      *
      * @param value
      */
-    public void DieSwitch (int value) {     //Denne funktion noterer hvor mange gange et tal er slået.
+
+    public void DieSwitch (int value) { // This function counts the amount of times each FaceValue is rolled.
         switch (value) {
             case 1:
-                faces[0] = faces[0]+1;
+                faces[0] = faces[0]+1; // If the FaceValue "1" is rolled, place 0 in the face Array is increased with 1
                 break;
             case 2:
-                faces[1] = faces[1]+1;
+                faces[1] = faces[1]+1; // If the FaceValue "2" is rolled, place 1 in the face Array is increased with 1
                 break;
             case 3:
-                faces[2] = faces[2]+1;
+                faces[2] = faces[2]+1; // If the FaceValue "3" is rolled, place 2 in the face Array is increased with 1
                 break;
             case 4:
-                faces[3] = faces[3]+1;
+                faces[3] = faces[3]+1; // If the FaceValue "4" is rolled, place 3 in the face Array is increased with 1
                 break;
             case 5:
-                faces[4] = faces[4]+1;
+                faces[4] = faces[4]+1; // If the FaceValue "5" is rolled, place 4 in the face Array is increased with 1
                 break;
             case 6:
-                faces[5] = faces[5]+1;
+                faces[5] = faces[5]+1; // If the FaceValue "5" is rolled, place 5 in the face Array is increased with 1
                 break;
             default:
-                break;
+                break; // Breaks out of switch as default
         }
     }
 
     /*
     -------------------------------------------------------------------------------------------
     Properties
+
      */
 
     public int getFaceValue() {

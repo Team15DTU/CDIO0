@@ -1,7 +1,6 @@
 package spil;
 
 import java.util.Scanner;
-//import sun.applet.Main;
 
 
 /**
@@ -19,41 +18,46 @@ import java.util.Scanner;
 
 public class Game {
 
-    Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in); // Loads a Scanner and naming it "scanner"
+
+    /*
+    Runs the Game class on player1, player2, die1 and die2.
+     */
 
     public void theGame (Player player1, Player player2, Die die1, Die die2){
 
-        Turn turn1 = new Turn();
+        Turn turn1 = new Turn(); // Creates turn and naming it "turn1"
 
-        System.out.println("Type first player name:");
-        player1.name = scanner.next();
-        System.out.println("Type second player name:");
-        player2.name = scanner.next();
+        System.out.println("Type first player name:"); // Print out "Type first player name:"
+        player1.setName( scanner.nextLine() );  // Loads input from keyboard and loads it into player1.name
 
-        while (player1.score <= 40 && player2.score <= 40) {
+        System.out.println("Type second player name:"); // Print out "Type first player name:"
+        player2.setName( scanner.nextLine() );  // Loads input from keyboard and loads it into player2.name
 
-            turn1.turn(player1, die1, die2);
-            System.out.println("Your score is "+player1.score+"\n");
+        /*
+        Runs the while loop as long as player1.has and player2.hasWon == false
+        OR
+        player1.score and player.score is the same.
+         */
 
-            turn1.turn(player2, die1, die2);
-            System.out.println("Your score is "+player2.score+"\n");
+        while (player1.isHasWon() == false && player2.isHasWon() == false || player1.getScore() == player2.getScore()) {
 
-        }
+            turn1.turn(player1, die1, die2); // Runs turn on player1, with die1 and die2
+            System.out.println(player1.getName() + "'s score is "+player1.getScore()+"\n"); // Print out the name and score of player1
 
-        while (player1.score == player2.score) {
-
-            turn1.turn(player1, die1, die2);
-            System.out.println("Your score is "+player1.score+"\n");
-
-            turn1.turn(player2, die1, die2);
-            System.out.println("Your score is "+player2.score+"\n");
+            turn1.turn(player2, die1, die2); // Runs turn on player1, with die1 and die2
+            System.out.println(player2.getName() + "'s score is "+player2.getScore() +"\n"); // Print out the name and score of player2
 
         }
 
-        if(player1.score>player2.score){
-        System.out.printf(player1.name+" won!");
-        }else{
-        System.out.printf(player2.name+" won!");
+        if (player1.isHasWon() == true){ // If player1.hasWon is true the code below is executed.
+
+            System.out.printf(player1.getName() +" won!"); // Print out the name of player1 and calls him the winner
+
+        } else if (player2.isHasWon() == true) { // If player2.hasWin is true the code below is executed.
+
+            System.out.printf(player2.getName() +" won!"); // Print out the name of player2 and calls him the winner
+
         }
 
     }

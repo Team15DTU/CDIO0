@@ -1,6 +1,5 @@
 package spil;
 
-import spil.Die;
 import java.util.Scanner;
 
 /**
