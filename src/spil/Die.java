@@ -20,11 +20,11 @@ public class Die {
 
     /*
     ----------------------------------- Fields  -----------------------------------
-    Private int FaceValue hold the value (number of eyes) of the die.
-    Private int array used for counting number of times of each FaceValue is rolled.
+    Private int faceValue hold the value (number of eyes) of the die.
+    Private int array used for counting number of times of each faceValue is rolled.
      */
 
-    private int FaceValue;
+    private int faceValue;
     private int[] faces = {0,0,0,0,0,0};
 
 
@@ -35,8 +35,8 @@ public class Die {
 
         Random generator = new Random(); // Creates an Random and naming it "generator"
 
-        FaceValue = generator.nextInt(6) + 1; // Greats a random number from 1-6 and loads it into FaceValue
-        DieSwitch(FaceValue); // Sends FaceValue to DieSwitch for counting of FaceValues.
+        faceValue = generator.nextInt(6) + 1; // Greats a random number from 1-6 and loads it into faceValue
+        DieSwitch(faceValue); // Sends faceValue to DieSwitch for counting of FaceValues.
         }
 
     /**
@@ -44,25 +44,25 @@ public class Die {
      * @param value
      */
 
-    public void DieSwitch (int value) { // This function counts the amount of times each FaceValue is rolled.
+    public void DieSwitch (int value) { // This function counts the amount of times each faceValue is rolled.
         switch (value) {
             case 1:
-                faces[0] = faces[0]+1; // If the FaceValue "1" is rolled, place 0 in the face Array is increased with 1
+                faces[0] = faces[0]+1; // If the faceValue "1" is rolled, place 0 in the face Array is increased with 1
                 break;
             case 2:
-                faces[1] = faces[1]+1; // If the FaceValue "2" is rolled, place 1 in the face Array is increased with 1
+                faces[1] = faces[1]+1; // If the faceValue "2" is rolled, place 1 in the face Array is increased with 1
                 break;
             case 3:
-                faces[2] = faces[2]+1; // If the FaceValue "3" is rolled, place 2 in the face Array is increased with 1
+                faces[2] = faces[2]+1; // If the faceValue "3" is rolled, place 2 in the face Array is increased with 1
                 break;
             case 4:
-                faces[3] = faces[3]+1; // If the FaceValue "4" is rolled, place 3 in the face Array is increased with 1
+                faces[3] = faces[3]+1; // If the faceValue "4" is rolled, place 3 in the face Array is increased with 1
                 break;
             case 5:
-                faces[4] = faces[4]+1; // If the FaceValue "5" is rolled, place 4 in the face Array is increased with 1
+                faces[4] = faces[4]+1; // If the faceValue "5" is rolled, place 4 in the face Array is increased with 1
                 break;
             case 6:
-                faces[5] = faces[5]+1; // If the FaceValue "5" is rolled, place 5 in the face Array is increased with 1
+                faces[5] = faces[5]+1; // If the faceValue "5" is rolled, place 5 in the face Array is increased with 1
                 break;
             default:
                 break; // Breaks out of switch as default
@@ -76,11 +76,11 @@ public class Die {
      */
 
     public int getFaceValue() {
-        return FaceValue;
+        return faceValue;
     }
 
     public void setFaceValue(int faceValue) {
-        FaceValue = faceValue;
+        this.faceValue = faceValue;
     }
 
     public int[] getFaces() {

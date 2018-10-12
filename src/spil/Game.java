@@ -50,11 +50,13 @@ public class Game {
 
         }
 
+
         if ( player1.isHasWon() == player2.isHasWon() ){ // If player1.hasWon is true the code below is executed.
 
             if ( player1.getScore() > player2.getScore() ) {
                 System.out.println(player1.getName() + " won!"); // Print out the name of player1 and calls him the winner
             }
+
 
             else {
                 System.out.println(player2.getName() + " won!"); // Print out the name of player1 and calls him the winner
