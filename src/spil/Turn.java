@@ -38,11 +38,16 @@ public class Turn {
                 System.out.println(player.getName() + " rolled 2 times double 6 and WIN");
 
                 player.setHasWon(true);     // setting score to win
+                player.setWinningTicket(true);
+
             }  else {
 
                 player.setWinningTicket(true);
 
-                if (player.getScore() > 40) {player.setHasWon(true);
+                if (player.getScore() > 40) {
+
+                    player.setHasWon(true);
+
                 } else {
                     System.out.println("You rolled two similar and get an extra turn!"); // Explains that your roll of two equal facevalues give you an extra turn
 
@@ -54,8 +59,11 @@ public class Turn {
 
             player.setWinningTicket(false);
 
-            if (player.getScore() >= 40) { player.setHasWon(true); }
-            else {
+            if (player.getScore() >= 40) {
+
+                player.setHasWon(true);
+
+            } else {
                 System.out.println("You rolled two similar and get an extra turn!"); // Explains that your roll of two equal facevalues give you an extra turn
 
                 turn(player, die1, die2); // Run a extra turn
