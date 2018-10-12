@@ -40,7 +40,7 @@ public class Game {
         player1.score and player.score is the same.
          */
 
-        while (player1.isHasWon() == false && player2.isHasWon() == false || player1.getScore() == player2.getScore()) {
+        while ( (!player1.isHasWon() && !player2.isHasWon() ) || ( player1.getScore() == player2.getScore() && player1.isHasWon() == player2.isHasWon() )  ) {
 
             turn1.turn(player1, die1, die2); // Runs turn on player1, with die1 and die2
             System.out.println(player1.getName() + "'s score is "+player1.getScore()+"\n"); // Print out the name and score of player1
@@ -50,14 +50,26 @@ public class Game {
 
         }
 
-        if (player1.isHasWon() == true){ // If player1.hasWon is true the code below is executed.
+        if ( player1.isHasWon() == player2.isHasWon() ){ // If player1.hasWon is true the code below is executed.
 
-            System.out.printf(player1.getName() +" won!"); // Print out the name of player1 and calls him the winner
+            if ( player1.getScore() > player2.getScore() ) {
+                System.out.println(player1.getName() + " won!"); // Print out the name of player1 and calls him the winner
+            }
 
-        } else if (player2.isHasWon() == true) { // If player2.hasWin is true the code below is executed.
+            else {
+                System.out.println(player2.getName() + " won!"); // Print out the name of player1 and calls him the winner
+            }
 
-            System.out.printf(player2.getName() +" won!"); // Print out the name of player2 and calls him the winner
+        }
 
+        else if ( player1.isHasWon() ) { // If player2.hasWin is true the code below is executed.
+
+            System.out.println(player1.getName() + " won!"); // Print out the name of player2 and calls him the winner
+        }
+
+        else if ( player2.isHasWon() ) {
+
+            System.out.println(player2.getName() + " won!"); // Print out the name of player2 and calls him the winner
         }
 
     }
